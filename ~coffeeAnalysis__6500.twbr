@@ -1,0 +1,3287 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20243.25.0114.1153                               -->
+<workbook original-version='18.1' source-build='2024.3.3 (20243.25.0114.1153)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <BasicButtonObject />
+    <CollapsiblePane />
+    <DashboardExportButton />
+    <_.fcp.IndividualControlFormatting.true...IndividualControlFormatting />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelTableType />
+    <ParameterAction />
+    <ParameterActionClearSelection />
+    <ParameterDefaultValues />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <VizInTooltipHideWorksheet />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+    <ZoneBackgroundTransparency />
+    <ZoneVisibilityControl />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column alias='Feb' caption='select month' datatype='integer' datatype-customized='true' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='2'>
+        <calculation class='tableau' formula='2' />
+        <aliases>
+          <alias key='1' value='Jan' />
+          <alias key='2' value='Feb' />
+          <alias key='3' value='Mar' />
+          <alias key='4' value='Apr' />
+          <alias key='5' value='May' />
+          <alias key='6' value='Jun' />
+        </aliases>
+        <members>
+          <member alias='Jan' value='1' />
+          <member alias='Feb' value='2' />
+          <member alias='Mar' value='3' />
+          <member alias='Apr' value='4' />
+          <member alias='May' value='5' />
+          <member alias='Jun' value='6' />
+        </members>
+      </column>
+      <column caption='Top N' datatype='integer' name='[Parameter 2]' param-domain-type='range' role='measure' type='quantitative' value='10'>
+        <calculation class='tableau' formula='10' />
+        <range granularity='1' max='100' min='1' />
+      </column>
+      <column caption='select category' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' source-field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[product_category]' type='nominal' value='&quot;Bakery&quot;'>
+        <calculation class='tableau' formula='&quot;Bakery&quot;' />
+      </column>
+      <column caption='totalRevenue_param' datatype='real' datatype-customized='true' default-format='C1033%' name='[Parameter 4]' param-domain-type='any' role='measure' type='quantitative' value='0.'>
+        <calculation class='tableau' formula='0.' />
+      </column>
+    </datasource>
+    <datasource caption='cleanCoffee_data2 Extract' inline='true' name='federated.0uaacyw1bcaqry14uj0uz1nzncy9' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='cleanCoffee_data2' name='hyper.0pf0fpe0m8sce915dc1ks0hklxdh'>
+            <connection authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/kibe/Desktop/Tab/coffeeSales/cleanCoffee_data2.hyper' default-settings='yes' server='' sslmode='' username='tableau_internal_user' />
+          </named-connection>
+        </named-connections>
+        <relation connection='hyper.0pf0fpe0m8sce915dc1ks0hklxdh' name='Extract' table='[Extract].[Extract]' type='table' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>revenue</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[revenue]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>revenue</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>234</approx-count>
+            <contains-null>true</contains-null>
+            <object-id>[Extract (Extract.Extract)_3A23F3ABAA6E4EAB8383BF43070E9B2C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>transaction_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[transaction_id]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>transaction_id</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>149116</approx-count>
+            <contains-null>true</contains-null>
+            <object-id>[Extract (Extract.Extract)_3A23F3ABAA6E4EAB8383BF43070E9B2C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>transaction_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[transaction_date]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>transaction_date</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <approx-count>253</approx-count>
+            <contains-null>true</contains-null>
+            <object-id>[Extract (Extract.Extract)_3A23F3ABAA6E4EAB8383BF43070E9B2C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>transaction_qty</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[transaction_qty]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>transaction_qty</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>3</approx-count>
+            <contains-null>true</contains-null>
+            <object-id>[Extract (Extract.Extract)_3A23F3ABAA6E4EAB8383BF43070E9B2C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>store_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[store_id]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>store_id</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>3</approx-count>
+            <contains-null>true</contains-null>
+            <object-id>[Extract (Extract.Extract)_3A23F3ABAA6E4EAB8383BF43070E9B2C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>store_location</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[store_location]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>store_location</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>3</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <object-id>[Extract (Extract.Extract)_3A23F3ABAA6E4EAB8383BF43070E9B2C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>product_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[product_id]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>product_id</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>183</approx-count>
+            <contains-null>true</contains-null>
+            <object-id>[Extract (Extract.Extract)_3A23F3ABAA6E4EAB8383BF43070E9B2C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>unit_price</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[unit_price]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>unit_price</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>128</approx-count>
+            <contains-null>true</contains-null>
+            <object-id>[Extract (Extract.Extract)_3A23F3ABAA6E4EAB8383BF43070E9B2C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>product_category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[product_category]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>product_category</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>9</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <object-id>[Extract (Extract.Extract)_3A23F3ABAA6E4EAB8383BF43070E9B2C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>product_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[product_type]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>product_type</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>63</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <object-id>[Extract (Extract.Extract)_3A23F3ABAA6E4EAB8383BF43070E9B2C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>product_detail</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[product_detail]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>product_detail</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>183</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <object-id>[Extract (Extract.Extract)_3A23F3ABAA6E4EAB8383BF43070E9B2C]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[:Measure Names]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:Calculation_197876957040017410:qk]&quot;' value='Sales' />
+          <alias key='&quot;[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:Calculation_197876957045850115:qk]&quot;' value='Revenue' />
+          <alias key='&quot;[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556223938566:qk]&quot;' value='Max&amp;Min Revenue' />
+        </aliases>
+      </column>
+      <column caption='totalRevenueCalc_param' datatype='real' name='[Calculation_1036109439166963712]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 4]' />
+      </column>
+      <column caption='monthFilter' datatype='string' name='[Calculation_197876957000380416]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF MONTH([transaction_date]) = [Parameters].[Parameter 1] THEN &quot;True&quot;&#13;&#10;ELSE &quot;False&quot;&#13;&#10;END' />
+      </column>
+      <column caption='avgTransaction_quantity' datatype='real' name='[Calculation_197876957002285057]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([transaction_qty])/COUNTD([transaction_id])' />
+      </column>
+      <column caption='sellsperstore' datatype='integer' name='[Calculation_197876957040017410]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{ FIXED [store_location]: SUM([transaction_qty])}' />
+      </column>
+      <column caption='revenueperstore' datatype='real' name='[Calculation_197876957045850115]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{ FIXED [store_location] : SUM([revenue])}' />
+      </column>
+      <column caption='top N field ' datatype='string' name='[Calculation_511721556216471552]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='IF RANK(SUM([transaction_qty])) &lt;= [Parameters].[Parameter 2] THEN &quot;Top N&quot; ELSE &quot;Other&quot;&#13;&#10;END'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='max_minRevenue' datatype='real' name='[Calculation_511721556223938566]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF SUM([revenue]) = WINDOW_MAX(SUM([revenue])) THEN SUM([revenue])&#13;&#10;ELSEIF SUM([revenue]) = WINDOW_MIN(SUM([revenue])) THEN SUM([revenue])&#13;&#10;END'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='% sold per category' datatype='real' name='[Calculation_511721556231249944]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([transaction_qty]) / SUM({ FIXED [product_category]: SUM([transaction_qty])})' />
+      </column>
+      <column caption='maxQuantity per category' datatype='integer' name='[Calculation_511721556376264730]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='{ FIXED [product_category]: MAX(transaction_qty) }' />
+      </column>
+      <column caption='Extract' datatype='table' name='[__tableau_internal_object_id__].[Extract (Extract.Extract)_3A23F3ABAA6E4EAB8383BF43070E9B2C]' role='measure' type='quantitative' />
+      <column caption='Product Category' datatype='string' name='[product_category]' role='dimension' type='nominal' />
+      <column caption='Product Detail' datatype='string' name='[product_detail]' role='dimension' type='nominal' />
+      <column caption='Product Id' datatype='integer' name='[product_id]' role='dimension' type='ordinal' />
+      <column caption='Product Type' datatype='string' name='[product_type]' role='dimension' type='nominal' />
+      <column caption='Revenue' datatype='real' name='[revenue]' role='measure' type='quantitative' />
+      <column caption='Store Id' datatype='integer' name='[store_id]' role='dimension' type='ordinal' />
+      <column caption='Store Location' datatype='string' name='[store_location]' role='dimension' type='nominal' />
+      <column caption='Transaction Date' datatype='date' name='[transaction_date]' role='dimension' type='ordinal' />
+      <column caption='Transaction Id' datatype='integer' name='[transaction_id]' role='dimension' type='ordinal' />
+      <column caption='Transaction Qty' datatype='integer' name='[transaction_qty]' role='measure' type='quantitative' />
+      <column caption='Unit Price' datatype='real' name='[unit_price]' role='measure' type='quantitative' />
+      <column-instance column='[product_category]' derivation='None' name='[none:product_category:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Calculation_197876957040017410]' derivation='Sum' name='[sum:Calculation_197876957040017410:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_197876957045850115]' derivation='Sum' name='[sum:Calculation_197876957045850115:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[revenue]' derivation='Sum' name='[sum:revenue:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[transaction_qty]' derivation='Sum' name='[sum:transaction_qty:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_511721556216471552]' derivation='User' name='[usr:Calculation_511721556216471552:nk:1]' pivot='key' type='nominal'>
+        <table-calc ordering-type='Columns' />
+      </column-instance>
+      <column-instance column='[Calculation_511721556223938566]' derivation='User' name='[usr:Calculation_511721556223938566:qk]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Rows' />
+      </column-instance>
+      <column-instance column='[transaction_date]' derivation='Week' name='[wk:transaction_date:ok]' pivot='key' type='ordinal' />
+      <group caption='Action (Product Category)' hidden='true' name='[Action (Product Category)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[product_category]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Product Category,Product Detail)' hidden='true' name='[Action (Product Category,Product Detail)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[product_category]' />
+          <groupfilter function='level-members' level='[product_detail]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Product Category,WEEK(Transaction Date))' hidden='true' name='[Action (Product Category,WEEK(Transaction Date))]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[product_category]' />
+          <groupfilter function='level-members' level='[wk:transaction_date:ok]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Store Location)' hidden='true' name='[Action (Store Location)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[store_location]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Transaction Date)' hidden='true' name='[Action (Transaction Date)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[transaction_date]' />
+        </groupfilter>
+      </group>
+      <group caption='Tooltip (Product Category)' hidden='true' name='[Tooltip (Product Category)]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[product_category]' />
+        </groupfilter>
+      </group>
+      <group caption='Tooltip (Product Category,Product Detail)' hidden='true' name='[Tooltip (Product Category,Product Detail)]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[product_category]' />
+          <groupfilter function='level-members' level='[product_detail]' />
+        </groupfilter>
+      </group>
+      <group caption='Tooltip (Store Location)' hidden='true' name='[Tooltip (Store Location)]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[store_location]' />
+        </groupfilter>
+      </group>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:product_category:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Bakery&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Drinking Chocolate&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Coffee beans&quot;</bucket>
+            </map>
+            <map to='#854836'>
+              <bucket>&quot;Tea&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Loose Tea&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Coffee&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;Flavours&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Branded&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;Packaged Chocolate&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[usr:Calculation_511721556216471552:nk:1]' type='palette'>
+            <map to='#854836'>
+              <bucket>&quot;Other&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Top N&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0uaacyw1bcaqry14uj0uz1nzncy9]&quot;</bucket>
+            </map>
+            <map to='#854836'>
+              <bucket>&quot;[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:revenue:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:Calculation_197876957040017410:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:transaction_qty:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556223938566:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Kenya&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column alias='Feb' caption='select month' datatype='integer' datatype-customized='true' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='2'>
+          <calculation class='tableau' formula='2' />
+          <aliases>
+            <alias key='1' value='Jan' />
+            <alias key='2' value='Feb' />
+            <alias key='3' value='Mar' />
+            <alias key='4' value='Apr' />
+            <alias key='5' value='May' />
+            <alias key='6' value='Jun' />
+          </aliases>
+        </column>
+        <column caption='Top N' datatype='integer' name='[Parameter 2]' param-domain-type='range' role='measure' type='quantitative' value='10'>
+          <calculation class='tableau' formula='10' />
+          <range granularity='1' max='100' min='1' />
+        </column>
+        <column caption='totalRevenue_param' datatype='real' datatype-customized='true' default-format='C1033%' name='[Parameter 4]' param-domain-type='any' role='measure' type='quantitative' value='0.'>
+          <calculation class='tableau' formula='0.' />
+        </column>
+      </datasource-dependencies>
+      <object-graph>
+        <objects>
+          <object caption='Extract' id='Extract (Extract.Extract)_3A23F3ABAA6E4EAB8383BF43070E9B2C'>
+            <properties context=''>
+              <relation connection='hyper.0pf0fpe0m8sce915dc1ks0hklxdh' name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <actions>
+    <action caption='Filter 1 (generated)' name='[Action1_1D33134550B74010BC93E3FAC20D9578]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='sales analysis' type='sheet' worksheet='totalrevenue per store' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='sales analysis' />
+      </command>
+    </action>
+    <action caption='Filter 2 (generated)' name='[Action2_A87482A7631A4D13A09AB29599817F10]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='sales analysis' type='sheet' worksheet='bestin each category' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='sales analysis' />
+      </command>
+    </action>
+    <action caption='Filter 3 (generated)' name='[Action5_3581DE83B31B4F33BC39F93EEDF9D6FD]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='product performance' type='sheet' worksheet='sales per week' />
+      <command command='tsc:tsl-filter'>
+        <param name='exclude' value='bestPerforming_category' />
+        <param name='special-fields' value='all' />
+        <param name='target' value='product performance' />
+      </command>
+    </action>
+    <edit-parameter-action caption='selectRevenue' name='[Action4_501F3E54D25B4E539A425B9C07AEE0C0]'>
+      <activation type='on-select' />
+      <source type='sheet' worksheet='salesTrend per month' />
+      <agg-type type='sum' />
+      <clear-option type='assign-fixed-value' value='r:1:0:0' />
+      <params>
+        <param name='source-field' value='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:revenue:qk]' />
+        <param name='target-parameter' value='[Parameters].[Parameter 4]' />
+      </params>
+    </edit-parameter-action>
+    <edit-parameter-action caption='selectRevenueDashboard' name='[Action4_FAF52B70544F4E92B8A11166151E0C3D]'>
+      <activation type='on-select' />
+      <source dashboard='sales analysis' type='sheet' worksheet='salesTrend per month' />
+      <agg-type type='sum' />
+      <clear-option type='assign-fixed-value' value='r:1:0:0' />
+      <params>
+        <param name='source-field' value='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:revenue:qk]' />
+        <param name='target-parameter' value='[Parameters].[Parameter 4]' />
+      </params>
+    </edit-parameter-action>
+  </actions>
+  <worksheets>
+    <worksheet name='KPI totalsales per store'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#4a4947' fontname='Tableau Regular' fontsize='13'>Total revenue vs sales</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleanCoffee_data2 Extract' name='federated.0uaacyw1bcaqry14uj0uz1nzncy9' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0uaacyw1bcaqry14uj0uz1nzncy9'>
+            <column caption='sellsperstore' datatype='integer' name='[Calculation_197876957040017410]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='{ FIXED [store_location]: SUM([transaction_qty])}' />
+            </column>
+            <column caption='revenueperstore' datatype='real' name='[Calculation_197876957045850115]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='{ FIXED [store_location] : SUM([revenue])}' />
+            </column>
+            <column-instance column='[store_location]' derivation='None' name='[none:store_location:nk]' pivot='key' type='nominal' />
+            <column caption='Product Category' datatype='string' name='[product_category]' role='dimension' type='nominal' />
+            <column caption='Product Detail' datatype='string' name='[product_detail]' role='dimension' type='nominal' />
+            <column caption='Revenue' datatype='real' name='[revenue]' role='measure' type='quantitative' />
+            <column caption='Store Location' datatype='string' name='[store_location]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_197876957040017410]' derivation='Sum' name='[sum:Calculation_197876957040017410:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_197876957045850115]' derivation='Sum' name='[sum:Calculation_197876957045850115:qk]' pivot='key' type='quantitative' />
+            <column caption='Transaction Qty' datatype='integer' name='[transaction_qty]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:Calculation_197876957045850115:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:Calculation_197876957040017410:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[Action (Product Category,Product Detail)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2_A87482A7631A4D13A09AB29599817F10]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[product_category]' />
+              <groupfilter function='level-members' level='[product_detail]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[Action (Store Location)]'>
+            <groupfilter function='member' level='[store_location]' member='&quot;Hell&apos;s Kitchen&quot;' user:ui-action-filter='[Action1_1D33134550B74010BC93E3FAC20D9578]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[:Measure Names]</column>
+            <column>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[Action (Product Category,Product Detail)]</column>
+            <column>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[Action (Store Location)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:store_location:nk]' value='58' />
+            <format attr='width' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[:Measure Names]' value='187' />
+            <format attr='font-family' value='Tableau Regular' />
+            <format attr='color' value='#555555' />
+            <format attr='font-weight' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:store_location:nk]' value='normal' />
+            <format attr='font-weight' value='normal' />
+            <format attr='font-size' value='12' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:store_location:nk]' value='216' />
+            <format attr='height' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[:Measure Names]' value='40' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-family' value='Tableau Regular' />
+            <format attr='color' value='#000000' />
+            <format attr='font-weight' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:store_location:nk]' value='normal' />
+            <format attr='font-weight' value='normal' />
+            <format attr='font-size' value='12' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#f7f7f7' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[Multiple Values]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text />
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:store_location:nk]</rows>
+        <cols>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[:Measure Names]</cols>
+      </table>
+      <simple-id uuid='{F8412BDF-F60E-4546-84BA-770FB950DD80}' />
+    </worksheet>
+    <worksheet name='bestPerforming_category'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontname='Tableau Regular' fontsize='13'>Total revenue vs transaction</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleanCoffee_data2 Extract' name='federated.0uaacyw1bcaqry14uj0uz1nzncy9' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column alias='Feb' caption='select month' datatype='integer' datatype-customized='true' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='2'>
+              <calculation class='tableau' formula='2' />
+              <aliases>
+                <alias key='1' value='Jan' />
+                <alias key='2' value='Feb' />
+                <alias key='3' value='Mar' />
+                <alias key='4' value='Apr' />
+                <alias key='5' value='May' />
+                <alias key='6' value='Jun' />
+              </aliases>
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0uaacyw1bcaqry14uj0uz1nzncy9'>
+            <column caption='monthFilter' datatype='string' name='[Calculation_197876957000380416]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF MONTH([transaction_date]) = [Parameters].[Parameter 1] THEN &quot;True&quot;&#13;&#10;ELSE &quot;False&quot;&#13;&#10;END' />
+            </column>
+            <column-instance column='[Calculation_197876957000380416]' derivation='None' name='[none:Calculation_197876957000380416:nk]' pivot='key' type='nominal' />
+            <column-instance column='[product_category]' derivation='None' name='[none:product_category:nk]' pivot='key' type='nominal' />
+            <column caption='Product Category' datatype='string' name='[product_category]' role='dimension' type='nominal' />
+            <column caption='Revenue' datatype='real' name='[revenue]' role='measure' type='quantitative' />
+            <column-instance column='[revenue]' derivation='Sum' name='[sum:revenue:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[transaction_qty]' derivation='Sum' name='[sum:transaction_qty:qk]' pivot='key' type='quantitative' />
+            <column caption='Transaction Date' datatype='date' name='[transaction_date]' role='dimension' type='ordinal' />
+            <column caption='Transaction Qty' datatype='integer' name='[transaction_qty]' role='measure' type='quantitative' />
+            <column-instance column='[transaction_date]' derivation='Week' name='[wk:transaction_date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[Action (Product Category,WEEK(Transaction Date))]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action5_3581DE83B31B4F33BC39F93EEDF9D6FD]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[product_category]' />
+              <groupfilter function='level-members' level='[wk:transaction_date:ok]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:Calculation_197876957000380416:nk]'>
+            <groupfilter function='member' level='[none:Calculation_197876957000380416:nk]' member='&quot;True&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_category:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:revenue:qk]' shelf='columns' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:Calculation_197876957000380416:nk]</column>
+            <column>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[Action (Product Category,WEEK(Transaction Date))]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:revenue:qk]' scope='rows' value='true' />
+            <encoding attr='space' class='0' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:transaction_qty:qk]' field-type='quantitative' fold='true' scope='rows' synchronized='true' type='space' />
+            <format attr='title' class='0' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:revenue:qk]' scope='rows' value='Total Revenue' />
+            <format attr='display' class='0' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:transaction_qty:qk]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_category:nk]' value='135' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#f7f7f7' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+            <format attr='div-level' scope='cols' value='0' />
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='header-div'>
+            <format attr='stroke-color' scope='cols' value='#854836' />
+            <format attr='line-pattern-only' scope='cols' value='solid' />
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='legend'>
+            <format attr='font-size' value='8' />
+          </style-rule>
+          <style-rule element='legend-title'>
+            <format attr='font-weight' value='bold' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[:Measure Names]' value='Measure names'>
+              <formatted-text>
+                <run>Measure names</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[:Measure Names]' />
+              <tooltip column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:transaction_qty:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#854836' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#854836' />
+                <format attr='mark-transparency' value='231' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:transaction_qty:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[:Measure Names]' />
+              <tooltip column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:transaction_qty:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#854836' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#854836' />
+                <format attr='mark-transparency' value='231' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:revenue:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[:Measure Names]' />
+              <tooltip column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:transaction_qty:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#ffb22c' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#854836' />
+                <format attr='mark-transparency' value='231' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:revenue:qk] + [federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:transaction_qty:qk])</rows>
+        <cols>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_category:nk]</cols>
+      </table>
+      <simple-id uuid='{785BB95C-A12B-40FF-8145-A88F233AD3CE}' />
+    </worksheet>
+    <worksheet name='bestSelling_product'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#4a4947' fontname='Tableau Regular' fontsize='12'>Top </run>
+            <run fontcolor='#ffb22c' fontname='Tableau Regular' fontsize='12'>&lt;[Parameters].[Parameter 2]&gt;</run>
+            <run fontcolor='#4a4947' fontname='Tableau Regular' fontsize='12'> best selling</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleanCoffee_data2 Extract' name='federated.0uaacyw1bcaqry14uj0uz1nzncy9' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Top N' datatype='integer' name='[Parameter 2]' param-domain-type='range' role='measure' type='quantitative' value='10'>
+              <calculation class='tableau' formula='10' />
+              <range granularity='1' max='100' min='1' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0uaacyw1bcaqry14uj0uz1nzncy9'>
+            <column caption='top N field ' datatype='string' name='[Calculation_511721556216471552]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='IF RANK(SUM([transaction_qty])) &lt;= [Parameters].[Parameter 2] THEN &quot;Top N&quot; ELSE &quot;Other&quot;&#13;&#10;END'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='RANK(SUM([Transaction Qty]))' datatype='integer' name='[Calculation_511721556218384389]' role='measure' type='quantitative' user:unnamed='bestSelling_product'>
+              <calculation class='tableau' formula='RANK(SUM([transaction_qty]))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column-instance column='[product_detail]' derivation='None' name='[none:product_detail:nk]' pivot='key' type='nominal' />
+            <column caption='Product Category' datatype='string' name='[product_category]' role='dimension' type='nominal' />
+            <column caption='Product Detail' datatype='string' name='[product_detail]' role='dimension' type='nominal' />
+            <column-instance column='[transaction_qty]' derivation='Sum' name='[sum:transaction_qty:qk]' pivot='key' type='quantitative' />
+            <column caption='Transaction Date' datatype='date' name='[transaction_date]' role='dimension' type='ordinal' />
+            <column caption='Transaction Qty' datatype='integer' name='[transaction_qty]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_511721556216471552]' derivation='User' name='[usr:Calculation_511721556216471552:nk:1]' pivot='key' type='nominal'>
+              <table-calc ordering-type='Columns' />
+            </column-instance>
+            <column-instance column='[Calculation_511721556218384389]' derivation='User' name='[usr:Calculation_511721556218384389:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Columns' />
+            </column-instance>
+            <column-instance column='[transaction_date]' derivation='Week' name='[wk:transaction_date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[Action (Product Category,WEEK(Transaction Date))]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action5_3581DE83B31B4F33BC39F93EEDF9D6FD]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[product_category]' />
+              <groupfilter function='level-members' level='[wk:transaction_date:ok]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556216471552:nk:1]'>
+            <groupfilter function='level-members' level='[usr:Calculation_511721556216471552:nk:1]' />
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_detail:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:transaction_qty:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556216471552:nk:1]</column>
+            <column>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[Action (Product Category,WEEK(Transaction Date))]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_detail:nk]' value='26' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_detail:nk]' value='104' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[Parameters].[Parameter 2]' type='custom-interpolated'>
+              <color-palette custom='true' name='' type='ordered-sequential'>
+                <color>#f1f1f1</color>
+                <color>#f2ebde</color>
+                <color>#f3e5cb</color>
+                <color>#f5deb8</color>
+                <color>#f6d8a4</color>
+                <color>#f8d291</color>
+                <color>#f9cc7d</color>
+                <color>#fac569</color>
+                <color>#fcbf55</color>
+                <color>#fdb840</color>
+                <color>#ffb22c</color>
+              </color-palette>
+            </encoding>
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#f7f7f7' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556216471552:nk:1]' />
+              <tooltip column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556218384389:qk]' />
+              <lod column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:transaction_qty:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Product Detail:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_detail:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Ranked:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556218384389:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Transactions:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:transaction_qty:qk]>]]></run>
+                <run>Æ&#10;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#854836' />
+                <format attr='mark-transparency' value='231' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_detail:nk]</rows>
+        <cols>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:transaction_qty:qk]</cols>
+      </table>
+      <simple-id uuid='{B72DB862-CEB3-45D0-947F-A3D98B208C5F}' />
+    </worksheet>
+    <worksheet name='bestin each category'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontname='Tableau Regular' fontsize='13'>Sales per category</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleanCoffee_data2 Extract' name='federated.0uaacyw1bcaqry14uj0uz1nzncy9' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column alias='Feb' caption='select month' datatype='integer' datatype-customized='true' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='2'>
+              <calculation class='tableau' formula='2' />
+              <aliases>
+                <alias key='1' value='Jan' />
+                <alias key='2' value='Feb' />
+                <alias key='3' value='Mar' />
+                <alias key='4' value='Apr' />
+                <alias key='5' value='May' />
+                <alias key='6' value='Jun' />
+              </aliases>
+            </column>
+            <column caption='select category' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' source-field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[product_category]' type='nominal' value='&quot;Bakery&quot;'>
+              <calculation class='tableau' formula='&quot;Bakery&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0uaacyw1bcaqry14uj0uz1nzncy9'>
+            <column caption='monthFilter' datatype='string' name='[Calculation_197876957000380416]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF MONTH([transaction_date]) = [Parameters].[Parameter 1] THEN &quot;True&quot;&#13;&#10;ELSE &quot;False&quot;&#13;&#10;END' />
+            </column>
+            <column caption='% sold per category' datatype='real' name='[Calculation_511721556231249944]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([transaction_qty]) / SUM({ FIXED [product_category]: SUM([transaction_qty])})' />
+            </column>
+            <column-instance column='[Calculation_197876957000380416]' derivation='None' name='[none:Calculation_197876957000380416:nk]' pivot='key' type='nominal' />
+            <column-instance column='[product_category]' derivation='None' name='[none:product_category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[product_detail]' derivation='None' name='[none:product_detail:nk]' pivot='key' type='nominal' />
+            <column caption='Product Category' datatype='string' name='[product_category]' role='dimension' type='nominal' />
+            <column caption='Product Detail' datatype='string' name='[product_detail]' role='dimension' type='nominal' />
+            <column caption='Store Location' datatype='string' name='[store_location]' role='dimension' type='nominal' />
+            <column-instance column='[transaction_qty]' derivation='Sum' name='[sum:transaction_qty:qk]' pivot='key' type='quantitative' />
+            <column caption='Transaction Date' datatype='date' name='[transaction_date]' role='dimension' type='ordinal' />
+            <column caption='Transaction Qty' datatype='integer' name='[transaction_qty]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_511721556231249944]' derivation='User' name='[usr:Calculation_511721556231249944:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[Action (Store Location)]'>
+            <groupfilter function='member' level='[store_location]' member='&quot;Hell&apos;s Kitchen&quot;' user:ui-action-filter='[Action1_1D33134550B74010BC93E3FAC20D9578]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:Calculation_197876957000380416:nk]' context='true'>
+            <groupfilter function='member' level='[none:Calculation_197876957000380416:nk]' member='&quot;True&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_category:nk]'>
+            <groupfilter expression='[product_category] = [Parameters].[Parameter 3]' function='filter' user:ui-marker='filter-by'>
+              <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+                <groupfilter function='member' level='[none:product_category:nk]' member='&quot;Bakery&quot;' />
+                <groupfilter function='member' level='[none:product_category:nk]' member='&quot;Branded&quot;' />
+                <groupfilter function='member' level='[none:product_category:nk]' member='&quot;Coffee&quot;' />
+                <groupfilter function='member' level='[none:product_category:nk]' member='&quot;Coffee beans&quot;' />
+                <groupfilter function='member' level='[none:product_category:nk]' member='&quot;Drinking Chocolate&quot;' />
+                <groupfilter function='member' level='[none:product_category:nk]' member='&quot;Flavours&quot;' />
+                <groupfilter function='member' level='[none:product_category:nk]' member='&quot;Loose Tea&quot;' />
+                <groupfilter function='member' level='[none:product_category:nk]' member='&quot;Packaged Chocolate&quot;' />
+                <groupfilter function='member' level='[none:product_category:nk]' member='&quot;Tea&quot;' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:Calculation_197876957000380416:nk]</column>
+            <column>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_category:nk]</column>
+            <column>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[Action (Store Location)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556231249944:qk]' value='p0.0%' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='size-bar' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556231249944:qk]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
+            <encoding attr='color' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556231249944:qk]' type='custom-interpolated'>
+              <color-palette custom='true' name='' type='ordered-sequential'>
+                <color>#f1f1f1</color>
+                <color>#e6dbd8</color>
+                <color>#dbc7c1</color>
+                <color>#d0b3ab</color>
+                <color>#c5a196</color>
+                <color>#bb9083</color>
+                <color>#b07f71</color>
+                <color>#a57060</color>
+                <color>#9a6151</color>
+                <color>#8f5442</color>
+                <color>#854836</color>
+              </color-palette>
+            </encoding>
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#f7f7f7' />
+          </style-rule>
+          <_.fcp.IndividualControlFormatting.true...style-rule element='legend'>
+            <_.fcp.IndividualControlFormatting.true...format attr='border-style' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556231249944:qk]' id='legend-color' value='solid' />
+            <_.fcp.IndividualControlFormatting.true...format attr='border-color' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556231249944:qk]' id='legend-color' value='#d6c0b3' />
+            <_.fcp.IndividualControlFormatting.true...format attr='border-width' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556231249944:qk]' id='legend-color' value='1' />
+          </_.fcp.IndividualControlFormatting.true...style-rule>
+          <style-rule element='legend-title'>
+            <_.fcp.IndividualControlFormatting.true...format attr='text-align' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556231249944:qk]' id='legend-color' value='center' />
+            <format attr='font-weight' value='bold' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556231249944:qk]' value='Sold per category'>
+              <formatted-text>
+                <run fontsize='8'>Sold per category</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556231249944:qk]' />
+              <color column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556231249944:qk]' />
+              <text column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_category:nk]' />
+              <text column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_detail:nk]' />
+              <text column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556231249944:qk]' />
+              <lod column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:transaction_qty:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Product Category:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_category:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Product Detail:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_detail:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Transaction Quantity:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:transaction_qty:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Percentage sold:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556231249944:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run><![CDATA[<[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_detail:nk]>
+]]></run>
+                <run bold='true'><![CDATA[<[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556231249944:qk]>]]></run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{C3FCDD19-2E3D-4464-A89B-CADEF42320DE}' />
+    </worksheet>
+    <worksheet name='data check'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleanCoffee_data2 Extract' name='federated.0uaacyw1bcaqry14uj0uz1nzncy9' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0uaacyw1bcaqry14uj0uz1nzncy9'>
+            <column-instance column='[transaction_id]' derivation='Count' name='[cnt:transaction_id:qk]' pivot='key' type='quantitative' />
+            <column caption='Transaction Id' datatype='integer' name='[transaction_id]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='table'>
+            <format attr='background-color' value='#f7f7f7' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[cnt:transaction_id:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run fontname='Tableau Regular' fontsize='15'>Total transaction:</run>
+                <run fontcolor='#b4b4b4' fontname='Tableau Regular' fontsize='15'><![CDATA[<[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[cnt:transaction_id:qk]>]]></run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{B4CBA57A-042C-4DD3-B378-BF78803B5549}' />
+    </worksheet>
+    <worksheet name='per category'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontname='Tableau Regular' fontsize='13'>Category &amp; quantity</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleanCoffee_data2 Extract' name='federated.0uaacyw1bcaqry14uj0uz1nzncy9' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='select category' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' source-field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[product_category]' type='nominal' value='&quot;Bakery&quot;'>
+              <calculation class='tableau' formula='&quot;Bakery&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0uaacyw1bcaqry14uj0uz1nzncy9'>
+            <column-instance column='[product_category]' derivation='None' name='[none:product_category:nk]' pivot='key' type='nominal' />
+            <column caption='Product Category' datatype='string' name='[product_category]' role='dimension' type='nominal' />
+            <column caption='Product Detail' datatype='string' name='[product_detail]' role='dimension' type='nominal' />
+            <column caption='Store Location' datatype='string' name='[store_location]' role='dimension' type='nominal' />
+            <column-instance column='[transaction_qty]' derivation='Sum' name='[sum:transaction_qty:qk]' pivot='key' type='quantitative' />
+            <column caption='Transaction Qty' datatype='integer' name='[transaction_qty]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[Action (Product Category,Product Detail)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2_A87482A7631A4D13A09AB29599817F10]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[product_category]' />
+              <groupfilter function='level-members' level='[product_detail]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[Action (Store Location)]'>
+            <groupfilter function='member' level='[store_location]' member='&quot;Hell&apos;s Kitchen&quot;' user:ui-action-filter='[Action1_1D33134550B74010BC93E3FAC20D9578]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_category:nk]'>
+            <groupfilter expression='[product_category] = [Parameters].[Parameter 3]' function='filter' user:ui-marker='filter-by'>
+              <groupfilter function='level-members' level='[none:product_category:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_category:nk]</column>
+            <column>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[Action (Store Location)]</column>
+            <column>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[Action (Product Category,Product Detail)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='font-size' data-class='subtotal' value='13' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='border-width' data-class='total' value='0' />
+            <format attr='border-style' data-class='total' value='none' />
+            <format attr='border-width' data-class='subtotal' value='0' />
+            <format attr='border-style' data-class='subtotal' value='none' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-family' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_category:nk]' value='Tableau Regular' />
+            <format attr='font-weight' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_category:nk]' value='bold' />
+            <format attr='font-size' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_category:nk]' value='12' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-width' data-class='total' value='0' />
+            <format attr='border-style' data-class='total' value='none' />
+            <format attr='border-width' data-class='subtotal' value='0' />
+            <format attr='border-style' data-class='subtotal' value='none' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#f7f7f7' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='font-weight' value='bold' />
+            <format attr='font-size' value='15' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='parameter-ctrl'>
+            <format attr='font-size' value='9' />
+          </style-rule>
+          <style-rule element='parameter-ctrl-title'>
+            <format attr='font-family' value='Tableau Book' />
+            <format attr='font-size' value='9' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:transaction_qty:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Product Category:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_category:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Transaction Qty:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:transaction_qty:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run fontsize='12'>&lt;</run>
+                <run fontsize='12'>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:transaction_qty:qk]</run>
+                <run fontsize='12'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_category:nk]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{C6B9BB42-87F4-4A61-A89F-9D2A26B1AA3F}' />
+    </worksheet>
+    <worksheet name='productRevenue'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontsize='13'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleanCoffee_data2 Extract' name='federated.0uaacyw1bcaqry14uj0uz1nzncy9' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0uaacyw1bcaqry14uj0uz1nzncy9'>
+            <column-instance column='[product_category]' derivation='None' name='[none:product_category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[store_location]' derivation='None' name='[none:store_location:nk]' pivot='key' type='nominal' />
+            <column caption='Product Category' datatype='string' name='[product_category]' role='dimension' type='nominal' />
+            <column caption='Revenue' datatype='real' name='[revenue]' role='measure' type='quantitative' />
+            <column caption='Store Location' datatype='string' name='[store_location]' role='dimension' type='nominal' />
+            <column-instance column='[revenue]' derivation='Sum' name='[sum:revenue:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[transaction_qty]' derivation='Sum' name='[sum:transaction_qty:qk]' pivot='key' type='quantitative' />
+            <column caption='Transaction Qty' datatype='integer' name='[transaction_qty]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[Tooltip (Store Location)]'>
+            <groupfilter function='level-members' level='[store_location]' user:ui-action-filter='[Action - productRevenue]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_category:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:revenue:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[Tooltip (Store Location)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_category:nk]' value='34' />
+            <format attr='font-size' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:revenue:qk]' value='8' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_category:nk]' value='136' />
+            <format attr='width' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:store_location:nk]' value='84' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-size' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_category:nk]' value='8' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <tooltip column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:transaction_qty:qk]' />
+              <text column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:revenue:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-color' value='#854836' />
+                <format attr='mark-transparency' value='193' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:store_location:nk] / [federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_category:nk])</rows>
+        <cols>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:revenue:qk]</cols>
+      </table>
+      <simple-id uuid='{041F8E8B-72E5-4844-8182-72412F644086}' />
+    </worksheet>
+    <worksheet name='sales per week'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#4a4947' fontname='Tableau Regular' fontsize='13'>Weekly sales</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleanCoffee_data2 Extract' name='federated.0uaacyw1bcaqry14uj0uz1nzncy9' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0uaacyw1bcaqry14uj0uz1nzncy9'>
+            <column-instance column='[product_category]' derivation='None' name='[none:product_category:nk]' pivot='key' type='nominal' />
+            <column caption='Product Category' datatype='string' name='[product_category]' role='dimension' type='nominal' />
+            <column-instance column='[transaction_qty]' derivation='Sum' name='[sum:transaction_qty:qk]' pivot='key' type='quantitative' />
+            <column caption='Transaction Date' datatype='date' name='[transaction_date]' role='dimension' type='ordinal' />
+            <column caption='Transaction Qty' datatype='integer' name='[transaction_qty]' role='measure' type='quantitative' />
+            <column-instance column='[transaction_date]' derivation='Week' name='[wk:transaction_date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[wk:transaction_date:qk]' scope='cols' value='Weeks' />
+            <encoding attr='space' class='0' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[wk:transaction_date:qk]' field-type='quantitative' max='27' min='1' range-type='fixed' scope='cols' type='space' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#f7f7f7' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <_.fcp.IndividualControlFormatting.true...style-rule element='legend'>
+            <_.fcp.IndividualControlFormatting.true...format attr='font-size' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_category:nk]' id='legend-color' value='8' />
+          </_.fcp.IndividualControlFormatting.true...style-rule>
+          <style-rule element='legend-title'>
+            <format attr='font-weight' value='bold' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_category:nk]' value='Product category'>
+              <formatted-text>
+                <run>Product category</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Area' />
+            <encodings>
+              <color column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_category:nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Product Category:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_category:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run bold='true' fontcolor='#79706e'><![CDATA[<[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[wk:transaction_date:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Transaction Qty:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:transaction_qty:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-transparency' value='231' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:transaction_qty:qk]</rows>
+        <cols>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[wk:transaction_date:qk]</cols>
+      </table>
+      <simple-id uuid='{96B3F5AC-DF84-49B9-AFEA-FA5E0419BC62}' />
+    </worksheet>
+    <worksheet name='salesTrend per month'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#4a4947' fontname='Tableau Regular' fontsize='13'>Total revenue vs transaction</run>
+            <run>Æ&#10;</run>
+            <run bold='true' fontcolor='#4a4947' fontname='Tableau Regular' fontsize='12'>Total revenue  selected :</run>
+            <run bold='true' fontcolor='#666666' fontname='Tableau Regular' fontsize='12'>Æ </run>
+            <run fontcolor='#666666' fontname='Tableau Regular' fontsize='12'>&lt;[Parameters].[Parameter 4]&gt;</run>
+            <run>Æ&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleanCoffee_data2 Extract' name='federated.0uaacyw1bcaqry14uj0uz1nzncy9' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='totalRevenue_param' datatype='real' datatype-customized='true' default-format='C1033%' name='[Parameter 4]' param-domain-type='any' role='measure' type='quantitative' value='0.'>
+              <calculation class='tableau' formula='0.' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0uaacyw1bcaqry14uj0uz1nzncy9'>
+            <column caption='totalRevenueCalc_param' datatype='real' name='[Calculation_1036109439166963712]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 4]' />
+            </column>
+            <column caption='max_minRevenue' datatype='real' name='[Calculation_511721556223938566]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF SUM([revenue]) = WINDOW_MAX(SUM([revenue])) THEN SUM([revenue])&#13;&#10;ELSEIF SUM([revenue]) = WINDOW_MIN(SUM([revenue])) THEN SUM([revenue])&#13;&#10;END'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column-instance column='[transaction_date]' derivation='None' name='[none:transaction_date:qk]' pivot='key' type='quantitative' />
+            <column caption='Product Category' datatype='string' name='[product_category]' role='dimension' type='nominal' />
+            <column caption='Product Detail' datatype='string' name='[product_detail]' role='dimension' type='nominal' />
+            <column caption='Revenue' datatype='real' name='[revenue]' role='measure' type='quantitative' />
+            <column caption='Store Location' datatype='string' name='[store_location]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1036109439166963712]' derivation='Sum' name='[sum:Calculation_1036109439166963712:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[revenue]' derivation='Sum' name='[sum:revenue:qk]' pivot='key' type='quantitative' />
+            <column caption='Transaction Date' datatype='date' name='[transaction_date]' role='dimension' type='ordinal' />
+            <column-instance column='[Calculation_511721556223938566]' derivation='User' name='[usr:Calculation_511721556223938566:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' />
+            </column-instance>
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[Action (Product Category,Product Detail)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2_A87482A7631A4D13A09AB29599817F10]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[product_category]' />
+              <groupfilter function='level-members' level='[product_detail]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[Action (Store Location)]'>
+            <groupfilter function='member' level='[store_location]' member='&quot;Hell&apos;s Kitchen&quot;' user:ui-action-filter='[Action1_1D33134550B74010BC93E3FAC20D9578]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[Action (Product Category,Product Detail)]</column>
+            <column>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[Action (Store Location)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:transaction_date:qk]' field-type='quantitative' major-origin='#2023-04-01#' major-spacing='1.0' major-units='months' max='#2023-07-10#' min='#2023-01-01#' range-type='fixed' scope='cols' type='space' />
+            <format attr='width' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:revenue:qk]' value='76' />
+            <format attr='title' class='0' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:transaction_date:qk]' scope='cols' value='Months' />
+            <format attr='auto-subtitle' class='0' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:transaction_date:qk]' scope='cols' value='false' />
+            <encoding attr='space' class='0' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556223938566:qk]' field-type='quantitative' fold='true' scope='rows' type='space' />
+            <format attr='display' class='0' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556223938566:qk]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='background-color' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:revenue:qk]' value='#f7f7f7' />
+            <format attr='background-color' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:transaction_date:qk]' value='#f7f7f7' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:transaction_date:qk]' value='' />
+            <format attr='text-orientation' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:transaction_date:qk]' value='0' />
+            <format attr='font-size' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:transaction_date:qk]' value='9' />
+            <format attr='font-size' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:revenue:qk]' value='9' />
+            <format attr='text-format' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:Calculation_1036109439166963712:qk]' value='C1033%' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='show-null-value-warning' value='false' />
+            <format attr='background-color' value='#f7f7f7' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='stroke-color' scope='rows' value='#ffb22c4b' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+            <format attr='div-level' scope='cols' value='0' />
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='header-div'>
+            <format attr='stroke-color' scope='cols' value='#854836' />
+            <format attr='line-pattern-only' scope='cols' value='solid' />
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+                <format attr='mark-color' value='#ffb22c' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#854836' />
+                <format attr='mark-transparency' value='231' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='stroke-size' value='1' />
+                <format attr='line-visibility' value='on' />
+                <format attr='line-pattern-only' value='dashed' />
+                <format attr='stroke-color' value='#ffb22caa' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:revenue:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[:Measure Names]' />
+              <lod column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:Calculation_1036109439166963712:qk]' />
+            </encodings>
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+                <format attr='mark-color' value='#ffb22c' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#854836' />
+                <format attr='mark-transparency' value='231' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='stroke-size' value='1' />
+                <format attr='line-visibility' value='on' />
+                <format attr='line-pattern-only' value='dashed' />
+                <format attr='stroke-color' value='#ffb22caa' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='4' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556223938566:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[:Measure Names]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Date:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:transaction_date:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>max_minRevenue:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556223938566:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.5492265224456787' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+                <format attr='mark-color' value='#ffb22c' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#854836' />
+                <format attr='mark-transparency' value='231' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='stroke-size' value='1' />
+                <format attr='line-visibility' value='on' />
+                <format attr='line-pattern-only' value='dashed' />
+                <format attr='stroke-color' value='#ffb22caa' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:revenue:qk] + [federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556223938566:qk])</rows>
+        <cols>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:transaction_date:qk]</cols>
+      </table>
+      <simple-id uuid='{C7E9DA9E-C638-40E6-93D7-CF263646BBF3}' />
+    </worksheet>
+    <worksheet name='totalCategories vs product types'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#4a4947' fontname='Tableau Regular' fontsize='13'>Product &amp; category</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleanCoffee_data2 Extract' name='federated.0uaacyw1bcaqry14uj0uz1nzncy9' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0uaacyw1bcaqry14uj0uz1nzncy9'>
+            <column-instance column='[product_category]' derivation='CountD' name='[ctd:product_category:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[product_type]' derivation='CountD' name='[ctd:product_type:qk]' pivot='key' type='quantitative' />
+            <column caption='Product Category' datatype='string' name='[product_category]' role='dimension' type='nominal' />
+            <column caption='Product Type' datatype='string' name='[product_type]' role='dimension' type='nominal' />
+            <column caption='Transaction Date' datatype='date' name='[transaction_date]' role='dimension' type='ordinal' />
+            <column-instance column='[transaction_date]' derivation='Week' name='[wk:transaction_date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[Action (Product Category,WEEK(Transaction Date))]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action5_3581DE83B31B4F33BC39F93EEDF9D6FD]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[product_category]' />
+              <groupfilter function='level-members' level='[wk:transaction_date:ok]' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[Action (Product Category,WEEK(Transaction Date))]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='table'>
+            <format attr='background-color' value='#f7f7f7' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[ctd:product_type:qk]' />
+              <text column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[ctd:product_category:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text />
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontalignment='0' fontcolor='#4a4947' fontname='Tableau Regular' fontsize='12'>Product Type: </run>
+                <run bold='true' fontalignment='0' fontcolor='#898989' fontname='Tableau Regular' fontsize='12'><![CDATA[<[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[ctd:product_type:qk]>]]></run>
+                <run fontalignment='0'>Æ&#10;</run>
+                <run bold='true' fontalignment='0' fontcolor='#4a4947' fontname='Tableau Regular' fontsize='12'>Product Category: </run>
+                <run bold='true' fontalignment='0' fontcolor='#898989' fontname='Tableau Regular' fontsize='12'><![CDATA[<[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[ctd:product_category:qk]>]]></run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='vertical-align' value='center' />
+                <format attr='text-align' value='right' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{D90967EA-5716-4B3B-9340-721E2F1631D1}' />
+    </worksheet>
+    <worksheet name='totalTransaction vs Sales'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#4a4947' fontname='Tableau Regular' fontsize='13'>Transation &amp; sales</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleanCoffee_data2 Extract' name='federated.0uaacyw1bcaqry14uj0uz1nzncy9' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0uaacyw1bcaqry14uj0uz1nzncy9'>
+            <column-instance column='[product_category]' derivation='CountD' name='[ctd:product_category:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[product_id]' derivation='CountD' name='[ctd:product_id:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[transaction_id]' derivation='CountD' name='[ctd:transaction_id:qk]' pivot='key' type='quantitative' />
+            <column caption='Product Category' datatype='string' name='[product_category]' role='dimension' type='nominal' />
+            <column caption='Product Id' datatype='integer' name='[product_id]' role='dimension' type='ordinal' />
+            <column-instance column='[transaction_qty]' derivation='Sum' name='[sum:transaction_qty:qk]' pivot='key' type='quantitative' />
+            <column caption='Transaction Date' datatype='date' name='[transaction_date]' role='dimension' type='ordinal' />
+            <column caption='Transaction Id' datatype='integer' name='[transaction_id]' role='dimension' type='ordinal' />
+            <column caption='Transaction Qty' datatype='integer' name='[transaction_qty]' role='measure' type='quantitative' />
+            <column-instance column='[transaction_date]' derivation='Week' name='[wk:transaction_date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[Action (Product Category,WEEK(Transaction Date))]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action5_3581DE83B31B4F33BC39F93EEDF9D6FD]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[product_category]' />
+              <groupfilter function='level-members' level='[wk:transaction_date:ok]' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[Action (Product Category,WEEK(Transaction Date))]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='height' value='204' />
+            <format attr='width' value='442' />
+            <format attr='color' value='#ffb22c' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#f7f7f7' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[ctd:product_id:qk]' />
+              <text column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[ctd:product_category:qk]' />
+              <text column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[ctd:transaction_id:qk]' />
+              <text column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:transaction_qty:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text />
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontalignment='0' fontcolor='#3b2f2f' fontname='Tableau Regular' fontsize='12'>Total transaction: </run>
+                <run bold='true' fontalignment='0' fontcolor='#898989' fontname='Tableau Regular' fontsize='12'><![CDATA[<[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[ctd:transaction_id:qk]>]]></run>
+                <run fontalignment='0'>Æ&#10;</run>
+                <run bold='true' fontalignment='0' fontcolor='#4a4947' fontname='Tableau Regular' fontsize='12'>Total sales: </run>
+                <run bold='true' fontalignment='0' fontcolor='#898989' fontname='Tableau Regular' fontsize='12'><![CDATA[<[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:transaction_qty:qk]>]]></run>
+                <run bold='true' fontalignment='0' fontcolor='#555555' fontname='Tableau Regular' fontsize='12'>Æ </run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='vertical-align' value='center' />
+                <format attr='text-align' value='right' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{D81268D8-23ED-4C30-9825-88E881E8F79D}' />
+    </worksheet>
+    <worksheet name='totalrevenue per store'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#4a4947' fontname='Tableau Regular' fontsize='12'>Revenue per store</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cleanCoffee_data2 Extract' name='federated.0uaacyw1bcaqry14uj0uz1nzncy9' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column alias='Feb' caption='select month' datatype='integer' datatype-customized='true' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='2'>
+              <calculation class='tableau' formula='2' />
+              <aliases>
+                <alias key='1' value='Jan' />
+                <alias key='2' value='Feb' />
+                <alias key='3' value='Mar' />
+                <alias key='4' value='Apr' />
+                <alias key='5' value='May' />
+                <alias key='6' value='Jun' />
+              </aliases>
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0uaacyw1bcaqry14uj0uz1nzncy9'>
+            <column caption='monthFilter' datatype='string' name='[Calculation_197876957000380416]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF MONTH([transaction_date]) = [Parameters].[Parameter 1] THEN &quot;True&quot;&#13;&#10;ELSE &quot;False&quot;&#13;&#10;END' />
+            </column>
+            <column-instance column='[Calculation_197876957000380416]' derivation='None' name='[none:Calculation_197876957000380416:nk]' pivot='key' type='nominal' />
+            <column-instance column='[store_location]' derivation='None' name='[none:store_location:nk]' pivot='key' type='nominal' />
+            <column caption='Product Category' datatype='string' name='[product_category]' role='dimension' type='nominal' />
+            <column caption='Product Detail' datatype='string' name='[product_detail]' role='dimension' type='nominal' />
+            <column caption='Store Location' datatype='string' name='[store_location]' role='dimension' type='nominal' />
+            <column-instance column='[transaction_qty]' derivation='Sum' name='[sum:transaction_qty:qk]' pivot='key' type='quantitative' />
+            <column caption='Transaction Date' datatype='date' name='[transaction_date]' role='dimension' type='ordinal' />
+            <column caption='Transaction Qty' datatype='integer' name='[transaction_qty]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[Action (Product Category,Product Detail)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2_A87482A7631A4D13A09AB29599817F10]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[product_category]' />
+              <groupfilter function='level-members' level='[product_detail]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:Calculation_197876957000380416:nk]'>
+            <groupfilter function='member' level='[none:Calculation_197876957000380416:nk]' member='&quot;True&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:store_location:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:transaction_qty:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:Calculation_197876957000380416:nk]</column>
+            <column>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[Action (Product Category,Product Detail)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:store_location:nk]' value='69' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:store_location:nk]' value='160' />
+            <format attr='background-color' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:store_location:nk]' value='#f7f7f7' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-size' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:store_location:nk]' value='10' />
+            <format attr='font-family' field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:store_location:nk]' value='Tableau Regular' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#f7f7f7' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[:Measure Names]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Store Location:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:store_location:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Transaction Quantity:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:transaction_qty:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run bold='true'><![CDATA[<Sheet name="productRevenue" maxwidth="400" maxheight="400" filter="<All Fields>">]]></run>
+                <run>Æ&#10;&#10;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:store_location:nk]</rows>
+        <cols>[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[sum:transaction_qty:qk]</cols>
+      </table>
+      <simple-id uuid='{EA091A51-7B41-4CF2-8012-B97058D72E7B}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style>
+        <style-rule element='table'>
+          <format attr='background-color' value='#e4e0e1' />
+        </style-rule>
+      </style>
+      <size maxheight='900' maxwidth='1600' minheight='900' minwidth='1600' sizing-mode='fixed' />
+      <datasources>
+        <datasource name='Parameters' />
+      </datasources>
+      <datasource-dependencies datasource='Parameters'>
+        <column alias='Feb' caption='select month' datatype='integer' datatype-customized='true' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='2'>
+          <calculation class='tableau' formula='2' />
+          <aliases>
+            <alias key='1' value='Jan' />
+            <alias key='2' value='Feb' />
+            <alias key='3' value='Mar' />
+            <alias key='4' value='Apr' />
+            <alias key='5' value='May' />
+            <alias key='6' value='Jun' />
+          </aliases>
+          <members>
+            <member alias='Jan' value='1' />
+            <member alias='Feb' value='2' />
+            <member alias='Mar' value='3' />
+            <member alias='Apr' value='4' />
+            <member alias='May' value='5' />
+            <member alias='Jun' value='6' />
+          </members>
+        </column>
+        <column caption='Top N' datatype='integer' name='[Parameter 2]' param-domain-type='range' role='measure' type='quantitative' value='10'>
+          <calculation class='tableau' formula='10' />
+          <range granularity='1' max='100' min='1' />
+        </column>
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='6' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98222' id='20' param='horz' type-v2='layout-flow' w='71813' x='500' y='889'>
+            <zone h='98222' id='18' type-v2='layout-basic' w='71813' x='500' y='889'>
+              <zone h='89111' id='5' param='vert' type-v2='layout-flow' w='71813' x='500' y='10000'>
+                <zone fixed-size='260' h='28889' id='8' is-fixed='true' param='horz' type-v2='layout-flow' w='71687' x='563' y='10111'>
+                  <zone fixed-size='446' h='28223' id='10' is-fixed='true' name='totalTransaction vs Sales' show-title='false' w='29125' x='751' y='10444'>
+                    <layout-cache fixed-size-h='204' type-h='fixed' type-w='fixed' />
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='10' />
+                    </zone-style>
+                  </zone>
+                  <zone fixed-size='46' h='28223' id='11' is-fixed='true' type-v2='empty' w='3375' x='29876' y='10444'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone fixed-size='584' h='28223' id='12' is-fixed='true' name='KPI totalsales per store' show-title='false' w='36811' x='33251' y='10444'>
+                    <layout-cache fixed-size-h='236' type-h='fixed' type-w='fixed' />
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='28223' id='13' type-v2='empty' w='2000' x='70062' y='10444'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone-style>
+                    <format attr='border-color' value='#4e79a7' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='3' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='24' h='3556' id='7' is-fixed='true' type-v2='empty' w='71687' x='563' y='39000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='39' h='4333' id='27' is-fixed='true' param='horz' type-v2='layout-flow' w='71687' x='563' y='42556'>
+                  <zone fixed-size='77' h='4333' id='29' is-fixed='true' type-v2='empty' w='5313' x='563' y='42556'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone fixed-size='298' h='4333' id='25' is-fixed='true' mode='slider' param='[Parameters].[Parameter 2]' type-v2='paramctrl' w='19125' x='5876' y='42556'>
+                    <formatted-text>
+                      <run>Top N</run>
+                    </formatted-text>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone fixed-size='584' h='4333' id='28' is-fixed='true' type-v2='empty' w='37000' x='25001' y='42556'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='4333' id='23' mode='compact' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='8249' x='62001' y='42556'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='4333' id='30' type-v2='empty' w='2000' x='70250' y='42556'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                </zone>
+                <zone fixed-size='415' h='46111' id='14' is-fixed='true' param='horz' type-v2='layout-flow' w='71687' x='563' y='46889'>
+                  <zone fixed-size='24' h='45445' id='15' is-fixed='true' type-v2='empty' w='2000' x='751' y='47222'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone fixed-size='429' h='45445' id='17' is-fixed='true' name='bestPerforming_category' w='27313' x='2751' y='47222'>
+                    <layout-cache minheight='189' type-h='scalable' type-w='cell' />
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone fixed-size='29' h='45445' id='32' is-fixed='true' type-v2='empty' w='2313' x='30064' y='47222'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='45445' id='31' name='salesTrend per month' w='39685' x='32377' y='47222'>
+                    <layout-cache minheight='212' minwidth='176' type-h='scalable' type-w='scalable' />
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone-style>
+                    <format attr='border-color' value='#4e79a7' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='3' />
+                  </zone-style>
+                </zone>
+                <zone-style>
+                  <format attr='border-color' value='#f28e2b' />
+                  <format attr='border-style' value='solid' />
+                  <format attr='border-width' value='1' />
+                </zone-style>
+              </zone>
+              <zone forceUpdate='true' h='9111' id='9' type-v2='text' w='71813' x='500' y='889'>
+                <formatted-text>
+                  <run fontalignment='1' fontname='Tableau Semibold' fontsize='20'>Sales Analysis </run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone fixed-size='627' h='98222' id='16' is-fixed='true' name='bestSelling_product' w='27187' x='72313' y='889'>
+            <layout-cache fixed-size-h='315' minwidth='312' type-h='fixed' type-w='scalable' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='7111' id='21' name='bestPerforming_category' pane-specification-id='2' param='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[:Measure Names]' type-v2='color' w='8750' x='20750' y='56111' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1650' minheight='1650' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='58' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='57' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+                <zone forceUpdate='true' h='9111' id='9' type-v2='text' w='71813' x='500' y='889'>
+                  <formatted-text>
+                    <run fontalignment='1' fontname='Tableau Semibold' fontsize='20'>Sales Analysis </run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='98222' id='16' is-fixed='true' name='bestSelling_product' w='27187' x='72313' y='889'>
+                  <layout-cache fixed-size-h='315' minwidth='312' type-h='fixed' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='234' h='28223' id='10' is-fixed='true' name='totalTransaction vs Sales' show-title='false' w='29125' x='751' y='10444'>
+                  <layout-cache fixed-size-h='204' type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='246' h='28223' id='12' is-fixed='true' name='KPI totalsales per store' show-title='false' w='36811' x='33251' y='10444'>
+                  <layout-cache fixed-size-h='236' type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='298' h='4333' id='25' mode='slider' param='[Parameters].[Parameter 2]' type-v2='paramctrl' w='19125' x='5876' y='42556'>
+                  <formatted-text>
+                    <run>Top N</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='4333' id='23' mode='compact' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='8249' x='62001' y='42556'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='45445' id='17' is-fixed='true' name='bestPerforming_category' w='27313' x='2751' y='47222'>
+                  <layout-cache minheight='189' type-h='scalable' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='7111' id='21' name='bestPerforming_category' pane-specification-id='2' param='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[:Measure Names]' type-v2='color' w='8750' x='20750' y='56111'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='45445' id='31' is-fixed='true' name='salesTrend per month' w='39685' x='32377' y='47222'>
+                  <layout-cache minheight='212' minwidth='176' type-h='scalable' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{64823EA0-68A4-4C51-8B25-A75026968131}' />
+    </dashboard>
+    <dashboard name='Story 1' type='storyboard'>
+      <style>
+        <style-rule element='table'>
+          <format attr='background-color' value='#e4e0e1' />
+        </style-rule>
+        <style-rule element='story-description'>
+          <format attr='background-color' value='#00000000' />
+        </style-rule>
+        <style-rule element='story-point-caption'>
+          <format attr='font-family' value='Tableau Semibold' />
+          <format attr='font-size' value='10' />
+          <format attr='font-weight' value='normal' />
+        </style-rule>
+        <style-rule element='story-title'>
+          <format attr='font-weight' value='normal' />
+        </style-rule>
+      </style>
+      <size maxheight='1064' maxwidth='1620' minheight='1064' minwidth='1620' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98496' id='1' param='vert' removable='false' type-v2='layout-flow' w='99012' x='494' y='752'>
+            <zone h='9492' id='4' is-fixed='true' paired-zone-id='5' removable='false' type-v2='flipboard-nav' w='99012' x='494' y='752' />
+            <zone h='89004' id='5' paired-zone-id='4' removable='false' type-v2='flipboard' w='99012' x='494' y='10244'>
+              <flipboard active-id='2' nav-type='caption' show-nav-arrows='true'>
+                <story-points>
+                  <story-point caption='Product performance' captured-sheet='product performance' id='2'>
+                    <currentDeltas>
+                      <datasource name='Parameters'>
+                        <column alias='May' name='[Parameter 1]' value='5' />
+                        <column name='[Parameter 2]' value='15' />
+                      </datasource>
+                    </currentDeltas>
+                    <capturedDeltas>
+                      <datasource name='Parameters'>
+                        <column alias='May' name='[Parameter 1]' value='5' />
+                        <column name='[Parameter 2]' value='10' />
+                      </datasource>
+                    </capturedDeltas>
+                  </story-point>
+                  <story-point caption='Sales analysis' captured-sheet='sales analysis' id='1'>
+                    <capturedDeltas>
+                      <worksheet name='salesTrend per month'>
+                        <selection-collection />
+                      </worksheet>
+                      <datasource name='Parameters'>
+                        <column alias='Apr' name='[Parameter 1]' value='4' />
+                        <column name='[Parameter 3]' value='&quot;Branded&quot;' />
+                      </datasource>
+                    </capturedDeltas>
+                  </story-point>
+                </story-points>
+              </flipboard>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <simple-id uuid='{6B1F26E0-D3B4-44F8-B145-C72E36F6D6E2}' />
+    </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='product performance'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#000000' fontname='Tableau Bold'>PRODUCT PERFORMANCE</run>
+            <run fontalignment='1'>Æ&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style>
+        <style-rule element='table'>
+          <format attr='background-color' value='#e4e0e1' />
+        </style-rule>
+        <_.fcp.IndividualControlFormatting.true...style-rule element='parameter-ctrl'>
+          <_.fcp.IndividualControlFormatting.true...format attr='background-color' field='[Parameters].[Parameter 2]' value='#e4e0e1' />
+        </_.fcp.IndividualControlFormatting.true...style-rule>
+        <style-rule element='parameter-ctrl-title'>
+          <_.fcp.IndividualControlFormatting.true...format attr='text-align' field='[Parameters].[Parameter 2]' value='center' />
+          <format attr='font-weight' value='bold' />
+        </style-rule>
+      </style>
+      <size maxheight='1000' maxwidth='1800' minheight='1000' minwidth='1800' sizing-mode='fixed' />
+      <datasources>
+        <datasource name='Parameters' />
+      </datasources>
+      <datasource-dependencies datasource='Parameters'>
+        <column alias='Feb' caption='select month' datatype='integer' datatype-customized='true' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='2'>
+          <calculation class='tableau' formula='2' />
+          <aliases>
+            <alias key='1' value='Jan' />
+            <alias key='2' value='Feb' />
+            <alias key='3' value='Mar' />
+            <alias key='4' value='Apr' />
+            <alias key='5' value='May' />
+            <alias key='6' value='Jun' />
+          </aliases>
+          <members>
+            <member alias='Jan' value='1' />
+            <member alias='Feb' value='2' />
+            <member alias='Mar' value='3' />
+            <member alias='Apr' value='4' />
+            <member alias='May' value='5' />
+            <member alias='Jun' value='6' />
+          </members>
+        </column>
+        <column caption='Top N' datatype='integer' name='[Parameter 2]' param-domain-type='range' role='measure' type='quantitative' value='10'>
+          <calculation class='tableau' formula='10' />
+          <range granularity='1' max='100' min='1' />
+        </column>
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98200' id='41' param='vert' type-v2='layout-flow' w='99000' x='500' y='900'>
+            <zone fixed-size='43' h='5100' id='42' is-fixed='true' type-v2='title' w='99000' x='500' y='900'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='93100' id='20' param='horz' type-v2='layout-flow' w='99000' x='500' y='6000'>
+              <zone h='93100' id='18' type-v2='layout-basic' w='99000' x='500' y='6000'>
+                <zone h='93100' id='1' param='horz' type-v2='layout-flow' w='99000' x='500' y='6000'>
+                  <zone fixed-size='1167' h='93100' id='8' is-fixed='true' param='vert' type-v2='layout-flow' w='64833' x='500' y='6000'>
+                    <zone fixed-size='269' h='26900' id='10' is-fixed='true' param='horz' type-v2='layout-flow' w='64833' x='500' y='6000'>
+                      <zone fixed-size='514' h='26900' id='15' is-fixed='true' name='totalTransaction vs Sales' w='29000' x='500' y='6000'>
+                        <layout-cache cell-count-h='1' non-cell-size-h='45' type-h='cell' type-w='cell' />
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                          <format attr='padding' value='0' />
+                          <format attr='padding-right' value='10' />
+                          <format attr='padding-left' value='10' />
+                        </zone-style>
+                      </zone>
+                      <zone h='26900' id='39' name='totalCategories vs product types' w='35833' x='29500' y='6000'>
+                        <layout-cache cell-count-h='1' cell-count-w='1' non-cell-size-h='45' type-h='cell' type-w='cell' />
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                          <format attr='padding' value='11' />
+                          <format attr='padding-top' value='0' />
+                          <format attr='padding-bottom' value='0' />
+                        </zone-style>
+                      </zone>
+                    </zone>
+                    <zone fixed-size='32' h='3200' id='25' is-fixed='true' param='horz' type-v2='layout-flow' w='64833' x='500' y='32900'>
+                      <zone fixed-size='620' h='3200' id='27' is-fixed='true' type-v2='empty' w='64833' x='500' y='32900'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                    </zone>
+                    <zone fixed-size='573' h='59700' id='13' is-fixed='true' param='horz' type-v2='layout-flow' w='64833' x='500' y='36100'>
+                      <zone fixed-size='549' h='57300' id='17' is-fixed='true' name='bestPerforming_category' w='30944' x='722' y='36500'>
+                        <layout-cache minheight='185' type-h='scalable' type-w='cell' />
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                          <format attr='margin-bottom' value='0' />
+                          <format attr='padding' value='10' />
+                          <format attr='padding-top' value='0' />
+                          <format attr='padding-bottom' value='0' />
+                        </zone-style>
+                      </zone>
+                      <zone h='57300' id='37' name='sales per week' w='33445' x='31666' y='36500'>
+                        <layout-cache minheight='208' minwidth='177' type-h='scalable' type-w='scalable' />
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                          <format attr='margin-bottom' value='0' />
+                          <format attr='padding' value='10' />
+                          <format attr='padding-top' value='0' />
+                          <format attr='padding-bottom' value='0' />
+                        </zone-style>
+                      </zone>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                        <format attr='margin-bottom' value='20' />
+                      </zone-style>
+                    </zone>
+                  </zone>
+                  <zone h='93100' id='5' param='vert' type-v2='layout-flow' w='34167' x='65333' y='6000'>
+                    <zone fixed-size='62' h='6200' id='30' is-fixed='true' param='horz' type-v2='layout-flow' w='34167' x='65333' y='6000'>
+                      <zone fixed-size='12' h='6200' id='35' is-fixed='true' type-v2='empty' w='1111' x='65333' y='6000'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone custom-title='true' h='6200' id='36' mode='type_in' param='[Parameters].[Parameter 2]' type-v2='paramctrl' w='31945' x='66444' y='6000'>
+                        <formatted-text>
+                          <run>Type in a number</run>
+                        </formatted-text>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone fixed-size='12' h='6200' id='31' is-fixed='true' type-v2='empty' w='1111' x='98389' y='6000'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                    </zone>
+                    <zone fixed-size='810' h='81800' id='7' is-fixed='true' name='bestSelling_product' w='34167' x='65333' y='12200'>
+                      <layout-cache minwidth='204' type-h='fixed' type-w='scalable' />
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                        <format attr='padding' value='10' />
+                        <format attr='padding-top' value='0' />
+                        <format attr='padding-bottom' value='0' />
+                      </zone-style>
+                    </zone>
+                  </zone>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='9' />
+          </zone-style>
+        </zone>
+        <zone h='7200' id='21' name='bestPerforming_category' pane-specification-id='2' param='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[:Measure Names]' type-v2='color' w='8778' x='22111' y='41700' />
+        <zone custom-title='true' fixed-size='324' h='5300' id='22' is-fixed='true' mode='compact' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='8944' x='21889' y='50200'>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#4a4947' fontsize='8'>Select month</run>
+          </formatted-text>
+        </zone>
+        <zone h='9000' id='38' name='sales per week' pane-specification-id='0' param='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_category:nk]' type-v2='color' w='10444' x='37000' y='41700' />
+        <zone h='5000' id='44' layout-strategy-id='distribute-evenly' param='horz' type-v2='layout-flow' w='9063' x='87813' y='1111'>
+          <zone fixed-size='60' h='5000' id='46' is-fixed='true' type-v2='dashboard-object' w='4556' x='87833' y='1100'>
+            <button action='' button-click-action-metadata='pdf'>
+              <export-button-action>tabdoc:abstract-dashboard-button-export-wrapper dashboard-button-export-type=&quot;pdf&quot; dashboarddoc-id=&quot;{26829AC1-539B-403A-8863-C52C8AFEBFDD}&quot;</export-button-action>
+              <button-visual-state>
+                <image-path>C:/Users/kibe/Desktop/Tab/coffeeSales/icons8-downloading-updates-48.png</image-path>
+                <tooltip-text>Download here...</tooltip-text>
+              </button-visual-state>
+            </button>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='5000' id='43' type-v2='dashboard-object' w='4500' x='92389' y='1100'>
+            <button action='tabdoc:goto-sheet window-id=&quot;{650FDC48-3785-434F-8495-654273EC417B}&quot;'>
+              <button-visual-state>
+                <image-path>C:/Users/kibe/Desktop/Tab/coffeeSales/arrow-square-right.png</image-path>
+                <tooltip-text>Go to sales dashboard</tooltip-text>
+              </button-visual-state>
+            </button>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+        </zone>
+        <zone h='2667' id='48' type-v2='dashboard-object' w='1500' x='96938' y='1000'>
+          <button action=''>
+            <toggle-action>tabdoc:toggle-button-click-action window-id=&quot;{4AA03314-9626-42C7-A184-15EDE5290C79}&quot; zone-id=&quot;48&quot; zone-ids=[44]</toggle-action>
+            <button-visual-state />
+            <button-visual-state />
+          </button>
+        </zone>
+      </zones>
+      <simple-id uuid='{26829AC1-539B-403A-8863-C52C8AFEBFDD}' />
+    </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='sales analysis'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#000000' fontname='Tableau Bold'>SALES ANALYSIS</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style>
+        <style-rule element='table'>
+          <format attr='background-color' value='#e4e0e1' />
+        </style-rule>
+        <style-rule element='parameter-ctrl-title'>
+          <format attr='font-size' value='9' />
+          <format attr='font-weight' value='bold' />
+        </style-rule>
+      </style>
+      <size maxheight='1000' maxwidth='1800' minheight='1000' minwidth='1800' sizing-mode='fixed' />
+      <datasources>
+        <datasource name='Parameters' />
+      </datasources>
+      <datasource-dependencies datasource='Parameters'>
+        <column alias='Feb' caption='select month' datatype='integer' datatype-customized='true' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='2'>
+          <calculation class='tableau' formula='2' />
+          <aliases>
+            <alias key='1' value='Jan' />
+            <alias key='2' value='Feb' />
+            <alias key='3' value='Mar' />
+            <alias key='4' value='Apr' />
+            <alias key='5' value='May' />
+            <alias key='6' value='Jun' />
+          </aliases>
+          <members>
+            <member alias='Jan' value='1' />
+            <member alias='Feb' value='2' />
+            <member alias='Mar' value='3' />
+            <member alias='Apr' value='4' />
+            <member alias='May' value='5' />
+            <member alias='Jun' value='6' />
+          </members>
+        </column>
+        <column caption='select category' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' source-field='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[product_category]' type='nominal' value='&quot;Bakery&quot;'>
+          <calculation class='tableau' formula='&quot;Bakery&quot;' />
+        </column>
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='97600' id='28' param='vert' type-v2='layout-flow' w='98668' x='666' y='1200'>
+            <zone fixed-size='42' h='5000' id='29' is-fixed='true' type-v2='title' w='98668' x='666' y='1200'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone fixed-size='2' h='1000' id='32' is-fixed='true' type-v2='empty' w='98668' x='666' y='6200'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone fixed-size='55' h='5500' id='35' is-fixed='true' type-v2='layout-basic' w='98668' x='666' y='7200'>
+              <zone h='5500' id='31' param='horz' type-v2='layout-flow' w='50457' x='666' y='7200'>
+                <zone custom-title='true' fixed-size='358' h='5500' id='8' is-fixed='true' mode='compact' param='[Parameters].[Parameter 3]' type-v2='paramctrl' w='20556' x='666' y='7200'>
+                  <formatted-text>
+                    <run>Select category</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='margin-left' value='8' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='69' h='5500' id='33' is-fixed='true' type-v2='empty' w='4277' x='21222' y='7200'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone custom-title='true' fixed-size='362' h='5500' id='12' is-fixed='true' mode='compact' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='20555' x='25499' y='7200'>
+                  <formatted-text>
+                    <run>Select month</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='background-color' value='#d6c0b358' />
+                </zone-style>
+              </zone>
+              <zone h='5500' id='36' param='horz' type-v2='layout-flow' w='48211' x='51123' y='7200'>
+                <zone h='5500' id='34' type-v2='empty' w='48211' x='51123' y='7200'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='background-color' value='#d6c0b358' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone h='86100' id='7' param='horz' type-v2='layout-flow' w='98668' x='666' y='12700'>
+              <zone h='86100' id='5' type-v2='layout-basic' w='98668' x='666' y='12700'>
+                <zone h='54268' id='16' param='horz' type-v2='layout-flow' w='98668' x='666' y='44532'>
+                  <zone h='54268' id='10' name='bestin each category' w='51168' x='666' y='44532'>
+                    <layout-cache cell-count-w='1' type-h='cell' type-w='cell' />
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                      <format attr='padding' value='10' />
+                      <format attr='padding-top' value='0' />
+                      <format attr='padding-bottom' value='0' />
+                    </zone-style>
+                  </zone>
+                  <zone fixed-size='847' h='54268' id='13' is-fixed='true' name='salesTrend per month' w='47500' x='51834' y='44532'>
+                    <layout-cache minheight='212' minwidth='176' type-h='scalable' type-w='scalable' />
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                      <format attr='padding' value='10' />
+                      <format attr='padding-top' value='0' />
+                      <format attr='padding-bottom' value='0' />
+                    </zone-style>
+                  </zone>
+                </zone>
+                <zone h='3145' id='19' type-v2='empty' w='98668' x='666' y='41387'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='28687' id='20' param='horz' type-v2='layout-flow' w='98668' x='666' y='12700'>
+                  <zone fixed-size='258' h='28687' id='3' is-fixed='true' name='per category' w='14777' x='666' y='12700'>
+                    <layout-cache type-h='cell' type-w='cell' />
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                      <format attr='padding' value='10' />
+                      <format attr='padding-top' value='0' />
+                      <format attr='padding-bottom' value='0' />
+                    </zone-style>
+                  </zone>
+                  <zone fixed-size='601' h='28687' id='9' is-fixed='true' name='KPI totalsales per store' w='33833' x='15443' y='12700'>
+                    <layout-cache type-h='cell' type-w='cell' />
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                      <format attr='padding' value='10' />
+                      <format attr='padding-top' value='0' />
+                      <format attr='padding-bottom' value='0' />
+                    </zone-style>
+                  </zone>
+                  <zone h='28687' id='15' name='totalrevenue per store' w='50058' x='49276' y='12700'>
+                    <layout-cache minwidth='260' type-h='cell' type-w='scalable' />
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                      <format attr='padding' value='10' />
+                      <format attr='padding-top' value='0' />
+                      <format attr='padding-bottom' value='0' />
+                    </zone-style>
+                  </zone>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+            <format attr='padding' value='4' />
+          </zone-style>
+        </zone>
+        <zone h='7100' id='14' name='salesTrend per month' pane-specification-id='3' param='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[:Measure Names]' type-v2='color' w='11278' x='56722' y='52500' />
+        <zone h='5500' id='11' name='bestin each category' pane-specification-id='0' param='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556231249944:qk]' type-v2='color' w='15500' x='35333' y='43900' />
+        <zone h='5000' hidden-by-user='true' id='39' layout-strategy-id='distribute-evenly' param='horz' type-v2='layout-flow' w='9063' x='87813' y='1111'>
+          <zone fixed-size='76' h='5000' hidden-by-user='true' id='43' is-fixed='true' type-v2='dashboard-object' w='4556' x='87833' y='1100'>
+            <button action='' button-click-action-metadata='pdf'>
+              <export-button-action>tabdoc:abstract-dashboard-button-export-wrapper dashboard-button-export-type=&quot;pdf&quot; dashboarddoc-id=&quot;{149183AF-D671-44F1-ABBB-9305B11966CE}&quot;</export-button-action>
+              <button-visual-state>
+                <image-path>C:/Users/kibe/Desktop/Tab/coffeeSales/icons8-downloading-updates-48.png</image-path>
+                <tooltip-text>Download here ..</tooltip-text>
+              </button-visual-state>
+            </button>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='5000' hidden-by-user='true' id='40' type-v2='dashboard-object' w='4500' x='92389' y='1100'>
+            <button action='tabdoc:goto-sheet window-id=&quot;{4AA03314-9626-42C7-A184-15EDE5290C79}&quot;'>
+              <button-visual-state>
+                <image-path>C:/Users/kibe/Desktop/Tab/coffeeSales/icons8-home-button-50Black.png</image-path>
+                <tooltip-text>Back to product dashboard</tooltip-text>
+              </button-visual-state>
+            </button>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+        </zone>
+        <zone h='2667' id='44' type-v2='dashboard-object' w='1500' x='97125' y='889'>
+          <button action='' active-visual-state-index='1'>
+            <toggle-action>tabdoc:toggle-button-click-action window-id=&quot;{650FDC48-3785-434F-8495-654273EC417B}&quot; zone-id=&quot;44&quot; zone-ids=[39]</toggle-action>
+            <button-visual-state />
+            <button-visual-state />
+          </button>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run fontalignment='1' fontcolor='#000000' fontname='Tableau Bold'>SALES ANALYSIS</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='1950' minheight='1950' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='70' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98400' id='69' param='vert' type-v2='layout-flow' w='99112' x='444' y='800'>
+                <zone fixed-size='42' h='5000' id='29' type-v2='title' w='98668' x='666' y='1200'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='76' h='5000' hidden-by-user='true' id='43' type-v2='dashboard-object' w='4556' x='87833' y='1100'>
+                  <button action='' button-click-action-metadata='pdf'>
+                    <export-button-action>tabdoc:abstract-dashboard-button-export-wrapper dashboard-button-export-type=&quot;pdf&quot; dashboarddoc-id=&quot;{149183AF-D671-44F1-ABBB-9305B11966CE}&quot;</export-button-action>
+                    <button-visual-state>
+                      <image-path>C:/Users/kibe/Desktop/Tab/coffeeSales/icons8-downloading-updates-48.png</image-path>
+                      <tooltip-text>Download here ..</tooltip-text>
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='5000' hidden-by-user='true' id='40' type-v2='dashboard-object' w='4500' x='92389' y='1100'>
+                  <button action='tabdoc:goto-sheet window-id=&quot;{4AA03314-9626-42C7-A184-15EDE5290C79}&quot;'>
+                    <button-visual-state>
+                      <image-path>C:/Users/kibe/Desktop/Tab/coffeeSales/icons8-home-button-50Black.png</image-path>
+                      <tooltip-text>Back to product dashboard</tooltip-text>
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone custom-title='true' fixed-size='358' h='5500' id='8' mode='compact' param='[Parameters].[Parameter 3]' type-v2='paramctrl' w='20556' x='666' y='7200'>
+                  <formatted-text>
+                    <run>Select category</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone custom-title='true' fixed-size='362' h='5500' id='12' mode='compact' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='20555' x='25499' y='7200'>
+                  <formatted-text>
+                    <run>Select month</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='279' h='28687' id='3' is-fixed='true' name='per category' w='14777' x='666' y='12700'>
+                  <layout-cache type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='279' h='28687' id='9' is-fixed='true' name='KPI totalsales per store' w='33833' x='15443' y='12700'>
+                  <layout-cache type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='279' h='28687' id='15' is-fixed='true' name='totalrevenue per store' w='50058' x='49276' y='12700'>
+                  <layout-cache minwidth='260' type-h='cell' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='54268' id='10' is-fixed='true' name='bestin each category' w='51168' x='666' y='44532'>
+                  <layout-cache cell-count-w='1' type-h='cell' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='5500' id='11' name='bestin each category' pane-specification-id='0' param='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556231249944:qk]' type-v2='color' w='15500' x='35333' y='43900'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='54268' id='13' is-fixed='true' name='salesTrend per month' w='47500' x='51834' y='44532'>
+                  <layout-cache minheight='212' minwidth='176' type-h='scalable' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='7100' id='14' name='salesTrend per month' pane-specification-id='3' param='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[:Measure Names]' type-v2='color' w='11278' x='56722' y='52500'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+                <format attr='padding' value='4' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{149183AF-D671-44F1-ABBB-9305B11966CE}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='37'>
+    <window class='worksheet' name='data check'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{EF08B0B0-77BA-4255-9643-B483A55F067A}' />
+    </window>
+    <window class='worksheet' name='per category'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Parameter 3]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{29BA1275-4B9C-498C-B9E8-B57A948C0542}' />
+    </window>
+    <window class='worksheet' name='totalTransaction vs Sales'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{0BD82EB9-8375-4724-88BB-D385577D4EC2}' />
+    </window>
+    <window class='worksheet' name='totalCategories vs product types'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{71669800-8959-4D25-B656-E38B56AAB959}' />
+    </window>
+    <window class='worksheet' name='KPI totalsales per store'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{AFBEF9A3-337C-4CA4-A5F8-807DBE141B02}' />
+    </window>
+    <window class='worksheet' name='bestSelling_product'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='type_in' param='[Parameters].[Parameter 2]' type='parameter' />
+            <card pane-specification-id='2' param='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556216471552:nk:1]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{36334BBE-3A39-4B87-90D7-73B0C573F404}' />
+    </window>
+    <window class='worksheet' name='bestPerforming_category'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='2' param='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[:Measure Names]' type='color' />
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{99C35E92-FF61-4A8B-B354-F23DA49701C7}' />
+    </window>
+    <window class='worksheet' name='productRevenue'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{38B0CB31-4DBD-4E0C-B859-E4F8D0F82200}' />
+    </window>
+    <window class='worksheet' name='sales per week'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[none:product_category:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{8F730D37-D0E3-498E-9162-6A51082F6724}' />
+    </window>
+    <window class='dashboard' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='KPI totalsales per store' />
+        <viewpoint name='bestPerforming_category'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='bestSelling_product' />
+        <viewpoint name='salesTrend per month'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='totalTransaction vs Sales' />
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{4E62C706-579F-43C6-8D2B-F1C0B94F3248}' />
+    </window>
+    <window class='worksheet' name='totalrevenue per store'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='2' param='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[:Measure Names]' type='color' />
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{E25490E1-3C2F-4F9B-83BB-B907F2FC3909}' />
+    </window>
+    <window class='worksheet' name='bestin each category'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+            <card pane-specification-id='0' param='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[usr:Calculation_511721556231249944:qk]' type='color' />
+            <card mode='compact' param='[Parameters].[Parameter 3]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{3B786BAA-91DB-4907-84FA-3469EDF21400}' />
+    </window>
+    <window class='worksheet' name='salesTrend per month'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='3' param='[federated.0uaacyw1bcaqry14uj0uz1nzncy9].[:Measure Names]' type='color' />
+            <card mode='type_in' param='[Parameters].[Parameter 4]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{8578356C-C470-4CE9-954F-5CCBE510DA71}' />
+    </window>
+    <window class='dashboard' name='product performance'>
+      <viewpoints>
+        <viewpoint name='bestPerforming_category'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='bestSelling_product' />
+        <viewpoint name='sales per week'>
+          <zoom type='fit-height' />
+        </viewpoint>
+        <viewpoint name='totalCategories vs product types'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='totalTransaction vs Sales'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='43' />
+      <simple-id uuid='{4AA03314-9626-42C7-A184-15EDE5290C79}' />
+    </window>
+    <window class='dashboard' name='sales analysis'>
+      <viewpoints>
+        <viewpoint name='KPI totalsales per store'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='bestin each category'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='per category'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='salesTrend per month'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='totalrevenue per store'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='15' />
+      <simple-id uuid='{650FDC48-3785-434F-8495-654273EC417B}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Story 1'>
+      <viewpoints />
+      <active id='-1' />
+      <simple-id uuid='{CAE34C1D-A156-4F8F-AB23-0B3CFC82A60C}' />
+    </window>
+  </windows>
+</workbook>
